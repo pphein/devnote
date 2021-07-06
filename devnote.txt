@@ -1,0 +1,282 @@
+﻿Environment For Developer in Ubuntu
+
+LEMP (Linux , Nginx, Mysql , PHP)
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get install zip unzip git
+
+sudo apt-get install -y software-properties-common python-software-properties
+
+sudo add-apt-respository ppa:ondrej/php
+
+sudo apt-get update
+
+sudo apt-get install -y php7.4-fpm
+
+(PHP Extensions for Laravel )
+
+sudo apt-get install -y php7.4-mbstring
+
+sudo apt-get install -y php7.4-xml
+
+sudo apt-get install -y php7.4-zip
+
+sudo apt-get install -y php7.4-mysql
+
+sudo apt-get install -y php7.4-curl
+
+(For Nginx)
+
+sudo apt-get install -y nginx
+
+(or)
+sudo apt-get install -y apache2 (For apache2 in LAMP)
+
+(For Mysql)
+
+sudo apt-get install -y mysql-server mysql-common mysql-client
+
+(After installing)
+စမ်းသပ်ကြည်ရန်
+sudo mysql -uroot (or) mysql -uroot
+
+sudo ပါမှ ရလျှင် password အတွက် ပြန်ပြင်ရမည်။
+
+sudo mysql -uroot
+USE  mysql;
+ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘newpassword’;
+exit;
+
+sudo service mysql restart
+
+mysql -uroot -pnewpassword  
+
+ (from ask ubuntu “ERROR 1698 (28000): Access denied for user root@locahost )
+
+(For composer to install laravel)
+
+sudo apt-get install curl
+
+sudo curl -sS https://getcomposer.org/installer | php
+
+sudo mv composer.phar  /usr/local/bin/composer
+
+composer လုပ်တာအဆင်ပြေမပြေစစ်ချင်ရင် dirတွေပြောင်းပြီး composer ခေါ်ပြီးစစ်ကြည့်နိုင်သည်
+
+(Installing laravel )
+
+composer global require laravel/installer
+
+ပြီးရင် laravel ဘယ်မှာရှိလဲစစ်ကြည့်ဖို့အတွက်
+
+cd ~/.config/composer/vendor/bin  or cd ~/.composer/vendor/bin ရိုက်ပြီး laravel ဘယ်မှာရှိသလဲစစ်နိုင်သည်။
+
+laravel လိုက်ရိုက်ကြည့်တဲ့အခါ command not found သာတွေ့နိုင်မည်။ ဖြေရှင်းရန်အတွက်
+
+sudo gedit ~/.bash_profile
+
+export PATH=~/.config/composer/vendor/bin:$PATH  (or)
+export PATH=~/.composer/vendor/bin:$PATH
+
+ဆိုပြီး laravel ရှိရာ dir ကို export  လုပ်ပေးရမည်။ 
+
+အလုပ်လုပ်ရန်အတွက် source ~/.bash_profile  command runပေးရမယ်
+
+၎င်းနောက် laravel ခေါ်ပြီး စစ်ဆေးနိုင်သည်။
+
+(Code Editors)
+
+Sublime-text
+sudo snap install sublime-text –classic
+
+OR
+***
+Install the GPG key: 
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+Ensure apt is set up to work with https sources: 
+sudo apt-get install apt-transport-https
+Select the channel to use: 
+Stable 
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+Dev 
+echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+Update apt sources and install Sublime Text 
+sudo apt-get update
+sudo apt-get install sublime-text
+******
+
+Visual Code
+sudo snap install --classic code
+OR
+****
+The repository and key can also be installed manually with the following script:
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+Then update the package cache and install the package using:
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install code # or code-insiders
+
+*****
+PHP MY ADMIN
+
+sudo apt-get update
+sudo apt-get install phpmyadmin
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-nginx-on-ubuntu-16-04
+
+NO PASSWORD IN PHPMYADMIN
+
+https://serverfault.com/questions/144095/phpmyadmin-on-ubuntu-lamp-login-without-a-password-is-forbidden-by-configurat
+
+
+
+POSTMAN
+sudo snap install postman
+
+
+
+(Myanmar Keyboard)
+
+https://github.com/naingyeminn/mm-kb
+
+
+
+
+
+
+
+No wifi adaptor found Error
+
+sudo apt install linux-generic-hwe-18.04
+And then reboot
+
+http://ubuntuhandbook.org/index.php/2018/08/no-wifi-adapter-found-hp-laptops-ubuntu-18-04/
+
+
+Heroku app deploy
+
+https://www.youtube.com/watch?v=MxfxiR8TVNU
+
+Heroku app deploy Laravel
+https://appdividend.com/2018/04/17/how-to-deploy-laravel-project-on-heroku/
+https://dev.to/jsafe00/deploy-laravel-application-with-database-to-heroku-l50
+https://medium.com/@juangsalazprabowo/how-to-deploy-a-laravel-app-into-heroku-df55efbf8e4e
+https://stackoverflow.com/questions/31665706/laravel-localhost-works-but-heroku-gives-500-error (500  Server Error)
+
+https://stackoverflow.com/questions/44564962/laravel-5-4-the-only-supported-ciphers-are-aes-128-cbc-and-aes-256-cbc-with-th/44565236
+
+Zoom Installation 
+
+https://linuxhint.com/install_zoom_ubuntu/
+https://zoom.us/download?os=linux
+
+
+Wifi Hostpot Error
+
+https://askubuntu.com/questions/1236823/system-policy-prohibits-use-as-a-hotspot-when-trying-to-turn-on-wifi-hotspot
+
+Screen Sharing or Screen Mirror in ubuntu
+
+with USB 
+
+$ sudo apt install scrcpy
+$ sudo apt install adb
+$ sudo apt-get install android-sdk-platform-tools-common
+
+Connect usb debug > usb file transfer
+
+$scrcpy
+
+With wifi
+$ adb kill-server
+$ adb start-server
+$ adb tcpip 5555
+$ adb connect ip_address (See About Phone> status> Ip address  or $~ adb devices or adb shell ip addr show wlan0)
+
+https://www.omgubuntu.co.uk/2019/07/scrcpy-mirror-android-to-ubuntu-linux
+https://developer.android.com/studio/command-line/adb.html#Enabling
+https://github.com/Genymobile/scrcpy
+https://github.com/Genymobile/scrcpy/issues/185
+https://developer.android.com/studio/run/device
+https://stackoverflow.com/questions/33462720/adb-unable-to-connect-to-192-168-1-105555
+
+
+FTP
+https://www.computernetworkingnotes.com/linux-tutorials/how-to-install-filezilla-ftp-client-in-ubuntu.html
+
+https://numato.com/blog/how-to-install-putty-on-linux/
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04
+
+MYSQL
+https://medium.com/@alef.duarte/cant-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysqld-sock-155d580f3a06
+
+PHP code Does not run error
+https://askubuntu.com/questions/840737/after-lamp-install-cant-run-php-scripts-on-localhost
+https://askubuntu.com/questions/451708/php-script-not-executing-on-apache-server
+
+
+For Larvel ON server
+https://devdojo.com/bobbyiliev/laravel-app-on-digital-ocean-ubuntu-1904-droplet-step-by-step-guide	
+https://askubuntu.com/questions/256013/apache-error-could-not-reliably-determine-the-servers-fully-qualified-domain-n
+
+https://dev.to/rizwan_saquib/how-to-create-lamp-stack-with-laravel-on-digital-ocean-server		
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-laravel-application-with-nginx-on-ubuntu-16-04
+
+https://medium.com/@franciscojbarrera/how-to-deploy-laravel-on-digital-ocean-lamp-e69046906fe
+
+https://dev.to/rizwan_saquib/how-to-create-lamp-stack-with-laravel-on-digital-ocean-server
+
+https://scotch.io/tutorials/deploying-laravel-to-digitalocean
+
+https://devdojo.com/bobbyiliev/laravel-app-on-digital-ocean-ubuntu-1904-droplet-step-by-step-guide#install-laravel
+
+
+
+ssh connection refused
+https://askubuntu.com/questions/673597/ssh-connect-to-host-127-0-0-1-port-2222-connection-refused
+
+
+
+https://askubuntu.com/questions/256013/apache-error-could-not-reliably-determine-the-servers-fully-qualified-domain-n
+
+
+PHPMYadmin
+mysqli_real_connect(): (HY000/1698): Access denied for user 'root'@'localhost' Error
+
+
+Bash Script
+https://www.cyberciti.biz/faq/run-execute-sh-shell-script/
+
+chmod -x script-name.sh
+./script-name.sh
+
+
+nordvpn
+https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Elementary-OS-and-Linux-Mint.htm
+
+H3ll0$w337
+
+sudo apt-get update 
+( Could not get lock /var/lib/apt/lists/lock. It is held by process 31130 (packagekitd) )
+Solution: kill process_id
+eg: kill 31130
+
+
+External Harddisk Mounting Error
+sudo ntfsfix /dev/sda1
+https://superuser.com/questions/694004/error-mounting-external-hard-drive
+https://forum.peppermintos.com/index.php?topic=5813.0
+https://ubuntuforums.org/showthread.php?t=1849755
+
+100 Days Python
+https://mega.nz/folder/3dkS2bDK#gYMtinIWJaX
+sFfVJErcZYA/folder/KN91DQKZ
+
